@@ -3,14 +3,14 @@
 
 public class Solution extends VersionControl {
     public int firstBadVersion(int n) {
-        int left = 0, right = n;
-        while(left < right){
-            int pivot = left + ((right - left) / 2);
-            if(isBadVersion(pivot))
-                right = pivot;
+        int l = 0, r = n;
+        while(l < r){
+            int p = l + ((r - l) / 2);
+            if(isBadVersion(p))
+                r = p;
             else
-                left = pivot + 1;
+                l = p + 1;
         }
-        return left;
+        return l;
     }
 }
