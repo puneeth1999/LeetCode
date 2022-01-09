@@ -11,7 +11,7 @@ class Solution {
         // Reverse the first slice of the array
         nums = reverseArray(nums, 0, k-1);
         // Reverse the remaining slice of the array
-        if (k < len - 1)
+        //if (k < len - 1)
             nums = reverseArray(nums, k, len - 1);
     }
     public static int[] reverseArray(int[] array, int start, int end) {
