@@ -1,8 +1,7 @@
 class Solution {
     public void duplicateZeros(int[] arr) {
         int i = 0, j = 0;
-        // if(arr.length == 1) return;
-        while(i< arr.length - 1){
+        while(i < arr.length - 1){
             if(arr[i] == 0){
                 int p = i+1;
                 j = i + 1;
