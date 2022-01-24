@@ -8,13 +8,13 @@ class Solution {
             // initialize the two pointers
             int j = i + 1, k = nums.length - 1;
             while(j<k){
-                int sum=nums[j]+nums[k];
-                if(sum==-nums[i]){
+                int sum=nums[i]+nums[j]+nums[k];
+                if(sum==0){
                     res.add(Arrays.asList(nums[i],nums[j],nums[k]));
                     j++; k--;
                 }
-                else if(sum > -nums[i])k--;
-                else if (sum < -nums[i])j++;
+                else if(sum > 0)k--;
+                else if (sum < 0)j++;
             }
             
         }
