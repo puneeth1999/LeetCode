@@ -1,6 +1,6 @@
 class Solution {
     public int myAtoi(String s) {
-        // Strip from the front
+        // Strip from the begining
         int i = 0;
         while(i < s.length() && s.charAt(i) == ' '){
             i++;
