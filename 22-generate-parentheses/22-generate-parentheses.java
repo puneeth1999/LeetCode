@@ -1,30 +1,34 @@
 class Solution {
     public List<String> generateParenthesis(int n) {
-        List<String> result = new ArrayList();
-        generateAll(new char[2 * n], 0, result);
-        return result;
+        char[] current = new char[2*n];
+        List<String> res = new ArrayList();
+        int pos = 0;
+        generate(current, pos, res);
+        return res;
     }
-    
-    public void generateAll(char[] current, int pos, List<String> result){
+    public void generate(char[] current, int pos, List<String> res){
         if(pos == current.length){
             if(isValid(current)){
-                result.add(new String(current));
-            } 
-        } else {
-                current[pos] = '(';
-                generateAll(current, pos+1, result);
-                current[pos] = ')';
-                generateAll(current, pos+1, result);
+                res.add(new String (current));
             }
-    }
-    
-    public boolean isValid(char[] arr){
-        int balance = 0;
-        for(char c : arr){
-            if(c == '(') balance++;
-            else balance --;
-            if(balance < 0) return false; // In case of - )(
+        } else{
+            current[pos] = '(';
+            generate(current, pos+1, res);
+            current[pos] = ')';
+            generate(current, pos+1, res);
         }
-        return (balance == 0);
+    }
+    public boolean isValid(char[] current){
+        int balance = 0;
+        for(int i = 0; i < current.length; i++){
+            if(current[i] == '(')
+                balance++;
+            else{
+                balance--;
+                if(balance < 0)
+                    return false;
+            }
+        }
+        return balance == 0;
     }
 }
