@@ -14,6 +14,6 @@ class Solution {
             }
             System.out.println(mid);
         }
-        return left - 1;
+        return right;
     }
 }
