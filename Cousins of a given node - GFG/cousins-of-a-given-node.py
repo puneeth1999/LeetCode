@@ -29,7 +29,6 @@ class Solution:
                     current.append(rightChild)
                 siblings[leftChild] = rightChild
                 siblings[rightChild] = leftChild
-            
             previous = current
             if(node_to_find in previous):
                 for i in previous:
