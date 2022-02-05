@@ -15,7 +15,7 @@ class Solution {
                 res[i] = product/nums[i];
             }
         }
-        // Case 1: zeroes == 1
+        // Case 2: zeroes == 1
         else if(zeroes == 1){
             for(int i = 0; i < res.length; i++){
                 if(nums[i] != 0)
@@ -24,7 +24,7 @@ class Solution {
                     res[i] = product;
             }
         }
-        // Case 1: zeroes > 1
+        // Case 3: zeroes > 1
         else {
             for(int i = 0; i < res.length; i++){
                 res[i] = 0;
