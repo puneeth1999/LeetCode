@@ -53,7 +53,7 @@ class GFG
                 matrix[j][i] = temp;
             }
         }
-        // Swap the columns
+        // Swap the rows
         int top = 0, bottom = matrix.length - 1;
         while(top < bottom){
             for(int i = 0; i < matrix[0].length; i++){
