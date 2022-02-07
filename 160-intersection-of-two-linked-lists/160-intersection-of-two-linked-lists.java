@@ -10,6 +10,7 @@
  * }
  */
 public class Solution {
+    // TC: O(N), SC: O(1)
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         ListNode curr = headA;
         int counter1 = 0;
