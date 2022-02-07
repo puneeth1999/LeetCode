@@ -11,16 +11,42 @@
  */
 public class Solution {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-        HashSet<ListNode> set = new HashSet<ListNode>();
         ListNode curr = headA;
+        int counter1 = 0;
         while(curr != null){
-            set.add(curr);
+            counter1++;
             curr = curr.next;
         }
         curr = headB;
-        while(!set.contains(curr) && curr != null){
+        int counter2 = 0;
+        while(curr != null){
+            counter2++;
             curr = curr.next;
         }
-        return curr;
+        int diff = Math.abs(counter1 - counter2);
+        
+        ListNode curr1 = headA;
+        ListNode curr2 = headB;
+        if(counter1 > counter2){
+            int i = 0;
+            while(i < diff){
+                curr1 = curr1.next;
+                i++;
+            }
+        } else{
+            int i = 0;
+            while(i < diff){
+                curr2 = curr2.next;
+                i++;
+            }
+        }
+        
+        while(curr1 != null && curr2 != null && curr1!=curr2){
+            curr1 = curr1.next;
+            curr2 = curr2.next;
+        }
+        if(curr1 == null || curr2 == null)
+            return null;
+        return curr1;
     }
 }
