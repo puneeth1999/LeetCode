@@ -1,5 +1,8 @@
 class Solution {
     public int addDigits(int num) {
+        if(num == 0) return 0;
+        if(num % 9 == 0) return 9;
+        return num % 9;
         // The values keep repeating
         /*
         1 - 1   10 - 1
@@ -13,8 +16,5 @@ class Solution {
         9 - 9   18 - 9
         we can observe that if the number is completely divisible my 9, it returns 9 else, it returns num % 9. Edge case is 0 in which case, it returns 0.
         */
-        if(num == 0) return 0;
-        if(num % 9 == 0) return 9;
-        return num % 9;
     }
 }
