@@ -11,29 +11,24 @@ class Node:
 class Solution:
     # Return a list containing the inorder traversal of the given tree
     def postOrder(self,node):
-       # code here
-       q = [node]
+       queue = [node]
        ans = []
-       
-       while(q):
-           val = q.pop(-1)
-           if val.left:
+       while(queue):
+           val = queue.pop(-1)
+           if(val.left):
                left = val.left
                val.left = None
-               q.append(val)
-               q.append(left)
+               queue.append(val)
+               queue.append(left)
                continue
-           if val.right:
+           if(val.right):
                right = val.right
                val.right = None
-               q.append(val)
-               q.append(right)
+               queue.append(val)
+               queue.append(right)
                continue
            ans.append(val.data)
-           
-           
        return ans
-        
 
 #{ 
 #  Driver Code Starts
