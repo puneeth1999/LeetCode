@@ -4,7 +4,7 @@ class Solution {
         int ans = 0;
         int[] adds = new int[nums.length + 1];
         adds[0] = 0;
-        for(int i = 1; i <= nums.length; i++){
+        for(int i = 1; i < adds.length; i++){
             adds[i] = nums[i-1] + adds[i-1];
         }
         for(int i = 0; i < adds.length; i++){
