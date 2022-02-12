@@ -37,22 +37,11 @@ class Solution {
         int max2 = A[0];    //A[0]-0
         int min2 = A[0];    //A[0]-0
         for(int i = 0; i < N; i++){
-            int x = A[i] + i;
-            if(x > max1){
-                max1 = x;
-            }
-            if(x < min1){
-                min1 = x;
-            }
-        }
-        for(int i = 0; i < N; i++){
-            int x = A[i] - i;
-            if(x > max2){
-                max2 = x;
-            }
-            if(x < min2){
-                min2 = x;
-            }
+            max1 = Math.max(max1, A[i] + i);
+            min1 = Math.min(min1, A[i] + i);
+            
+            max2 = Math.max(max2, A[i] - i);
+            min2 = Math.min(min2, A[i] - i);
         }
         int res = Math.max(max1 - min1, max2 - min2);
         return res;
