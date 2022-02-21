@@ -19,28 +19,30 @@ class Solution {
         return merged;
     }
     public ListNode merge(ListNode one, ListNode two){
-        ListNode curr1 = one, curr2 = two;
-        ListNode head = new ListNode();
+        ListNode curr1 = one;
+        ListNode curr2 = two;
+        ListNode head = new ListNode(0);
         ListNode curr = head;
         while(curr1 != null && curr2 != null){
-            if(curr1.val <= curr2.val){
-                curr.next = curr1;
+            if(curr1.val < curr2.val){
+                curr.next = new ListNode(curr1.val);
                 curr1 = curr1.next;
-            } else{
-                curr.next = curr2;
+            }
+            else {
+                curr.next = new ListNode(curr2.val);
                 curr2 = curr2.next;
             }
             curr = curr.next;
         }
         while(curr1 != null){
-            curr.next = curr1;
-            curr1 = curr1.next;
+            curr.next = new ListNode(curr1.val);
             curr = curr.next;
+            curr1 = curr1.next;
         }
         while(curr2 != null){
-            curr.next = curr2;
-            curr2 = curr2.next;
+            curr.next = new ListNode(curr2.val);
             curr = curr.next;
+            curr2 = curr2.next;
         }
         return head.next;
     }
