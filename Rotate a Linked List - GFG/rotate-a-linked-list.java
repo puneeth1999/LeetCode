@@ -69,8 +69,6 @@ class Solution{
         {
             return head;
         }
-        // printList(head);
-        
         int l = 0;
         Node curr = head;
         while(curr != null){
@@ -81,29 +79,20 @@ class Solution{
             return head;
         k = l - k + 1;
         Node rev = reverse(head, null);
-        // printList(rev);
-        
         int i = 1;
         Node c1 = rev;
         while(i < k){
             i++;
             c1 = c1.next;
         }
-        
         Node part1 = reverse(rev, c1);
-        // printList(part1);
-        
         Node part2 = reverse(c1, null);
-        // printList(part2);
-        
         c1 = part1;
         while(c1.next != null){
             c1 = c1.next;
         }
         c1.next = part2;
-        
         return part1;
-        
     }
     
     public Node reverse(Node curr, Node end){
@@ -117,39 +106,6 @@ class Solution{
         }
         return prev;
     }
-    
-    // public void printList(Node NODE){
-    //     Node N = NODE;
-    //     while(N != null){
-    //         System.out.print(N.data + " ");
-    //         N = N.next;
-    //     }System.out.println();
-    // }
-    
 }
 
-// class Solution{
-//   //Function to rotate a linked list.
-//   public Node rotate(Node head, int k) {
-//       // add code here
-//       int n=0;
-//       Node out=null;
-//       Node curr=head;
-//       while(n<k-1){
-//           curr=curr.next;
-//           n++;
-//       }
-//       if(curr.next==null){
-//           return head;
-//       }
-//       Node temp=curr.next;
-//       out=temp;
-//       curr.next=null;
-//       while(temp.next!=null){
-//           temp=temp.next;
-//       }
-//       temp.next=head;
-       
-//       return out;
-//   }
-// }
+
