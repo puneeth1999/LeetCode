@@ -88,8 +88,6 @@ class GfG
     Node deleteNode(Node head, int x)
     {
 	    // Your code here	
-        if(head.next == null && head.data == x)
-            return null;
         if(x == 1)
             return head.next;
 	    Node prev = head;
