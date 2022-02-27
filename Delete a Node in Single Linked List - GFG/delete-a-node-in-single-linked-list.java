@@ -92,7 +92,6 @@ class GfG
             return head.next;
 	    Node prev = head;
 	    Node curr = head.next;
-	    
 	    int a = 1;
 	    while(curr != null){
 	        a++;
