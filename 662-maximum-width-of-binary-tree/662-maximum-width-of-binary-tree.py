@@ -9,7 +9,6 @@ class Solution:
         queue = [(0, root)]
         max_width = float('-inf')
         nulls = False
-        nullCount = 0
         while(queue):
             indices = []
             n = len(queue)
@@ -21,7 +20,6 @@ class Solution:
                 if node.right:
                     queue.append((2*idx+2, node.right))
             max_width = max(max(indices) - min(indices) + 1, max_width)
-            
         return max_width
         
         
