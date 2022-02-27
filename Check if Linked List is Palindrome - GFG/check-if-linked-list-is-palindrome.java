@@ -104,14 +104,11 @@ class Solution
         // Incase there is only one element in the linkedlist:
         if(head == null || head.next == null)
             return true;
-            
-        
         Node fast = head, slow = head;
         while(fast != null && fast.next != null){
             fast = fast.next.next;
             slow = slow.next; 
         }// slow is now pointting to the middle element
-        
         Node tail = reverse(slow);
         while(tail != null){
             if(head.data != tail.data){
