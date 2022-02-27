@@ -113,7 +113,7 @@ class Solution
         }// slow is now pointting to the middle element
         
         Node tail = reverse(slow);
-        while(head != slow && tail != null){
+        while(tail != null){
             if(head.data != tail.data){
                 return false;
             }
