@@ -5,11 +5,11 @@ class Solution:
         if(len(s) > len(t)):
             return False
         j = 0
-        for i in range(len(t)):
-            if j == len(s):
-                break
-            if s[j] == t[i]:
-                j+=1
+        i = 0
+        while(j < len(s) and i < len(t)):
+            if t[i] == s[j]:
+                j += 1
+            i += 1
         if j == len(s):
             return True
         return False
