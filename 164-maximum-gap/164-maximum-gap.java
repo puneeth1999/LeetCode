@@ -23,15 +23,14 @@ class Solution {
             minBucket[bucketIdx] = Math.min(minBucket[bucketIdx], nums[i]);
             maxBucket[bucketIdx] = Math.max(maxBucket[bucketIdx], nums[i]);
         }
-        
+        int max_prev = min;
         for(int i =0;i<n -1;i++){
             if(maxBucket[i]==Integer.MIN_VALUE) // empty buckets
                 continue;
-            maxGap = Math.max(minBucket[i] - min, maxGap);
-            min = maxBucket[i];
+            maxGap = Math.max(minBucket[i] - max_prev, maxGap);
+            max_prev = maxBucket[i];
         }
-
-        maxGap = Math.max(maxGap, max-min);// 2
+        maxGap = Math.max(maxGap, max-max_prev);// 2
         return maxGap;
         
     }
